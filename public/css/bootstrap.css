@@ -1559,6 +1559,9 @@ table {
   color: #827fab;
   text-decoration: underline;
 }
+.table tbody tr td {
+  vertical-align: middle;
+}
 .table caption + thead tr:first-child th,
 .table caption + thead tr:first-child td,
 .table colgroup + thead tr:first-child th,
