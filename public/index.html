@@ -9,7 +9,7 @@
 	  <title>Ask Anyways Charlotte</title>
 	  <meta name="description" content="">
 	  <meta name="viewport" content="width=device-width">
-	
+
 	  <link rel="stylesheet" href="css/bootstrap.css">
 	  <link rel="stylesheet" href="css/responsive.css">
 
@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
-    
+
     <style type="text/css">
       #wrap {
 	      margin-top: 80px;
@@ -89,11 +89,11 @@
         </div>
       </div>
     </div>
-    
+
     <div id="wrap">
 
 	    <div class="container">
-	
+
 	      <div class="row">
 	        <div class="span12">
 	        	<form class="form-search pull-right">
@@ -103,12 +103,12 @@
 						</form>
 	        </div>
 	      </div>
-	      
+
 	      <div class="row">
 	        <div class="span12">
-	        
+
 		    		<div class="tabbable tabs-left">
-		    		
+
 		          <ul class="nav nav-tabs">
 		            <li class="active">
 		            	<a href="#lA" data-toggle="tab">
@@ -131,14 +131,14 @@
 		            </li>
 		            -->
 		          </ul>
-		          
+
 		          <div class="tab-content">
 		            <div class="tab-pane active" id="lA">
-		            
+
 		            	<div id="loading">
 			            	<p>Fetching DDR records..</p>
 		            	</div>
-		            	
+
 		            	<table id="records" class="tablesorter table table-striped table-hover">
 			              <thead>
 			                <tr>
@@ -152,7 +152,7 @@
 			              </thead>
 			              <tbody></tbody>
 			            </table>
-            
+
 									<div class="tablepager">
 										<form>
 				              <div class="pager-btns input-prepend">
@@ -174,7 +174,7 @@
 											</select>
 										</form>
 									</div>
-	            
+
 		            </div>
 		            <!--
 		            <div class="tab-pane" id="lB">
@@ -185,38 +185,38 @@
 		            </div>
 		            -->
 		          </div>
-		          
+
 		        </div>
-	            
+
 	        </div>
 	      </div>
-	
+
 	      <hr>
-	
+
 	      <footer>
 	        <p>&copy; Ask community Systems 2012</p>
 	      </footer>
-	
+
 	    </div> <!-- /container -->
-	    
+
     </div> <!-- /wrap -->
 
     <script src="js/libs/jquery/jquery.js"></script>
     <script src="js/libs/bootstrap/bootstrap.js"></script>
-    
+
     <script src="js/libs/tablesorter/tablesorter.js"></script>
     <script src="js/libs/tablesorter/tablesorter.pager.js"></script>
-    
+
     <script src="js/main.js"></script>
-    
+
     <script type="text/javascript">
 	    $('document').ready(function()
 	    {
 		    $('.tabs-left .tab-content').css({ minHeight: $('.tabs-left .nav-tabs').height() - 41 });
-		    
-				var url = "http://ask-charlotte.appspot.com/ddr";
+
+				var url = "/ddr";
 				var account = 'bf1d1a50-e095-11e1-80a9-00007f000001';
-		    
+
 				$.getJSON(
 					url,
 					{ account: account }
@@ -225,13 +225,13 @@
 						$('#loading').hide();
 						$('#records').show();
 						$('.tablepager').show();
-						
+
 						$(data).each(function(index, record)
 						{
 							var row = '<tr><td>'+ record.dateTime +'</td><td>'+ record.agent +'</td><td>'+ record.remoteAddress +'</td><td>'+ record.direction +'</td><td>'+ record.type +'</td><td>'+ record.adapterType+'</td></tr>';
 		          $('#records tbody').append(row);
 						});
-						
+
 				    $("#records")
 					    .tablesorter(
 					    	{
@@ -251,11 +251,11 @@
 					    		container: $(".tablepager"),
 					    		size: 10
 					    	}
-				    	);	
+				    	);
 					}
-				)	
+				)
 	    })
     </script>
-    
+
   </body>
 </html>
